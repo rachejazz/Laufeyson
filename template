@@ -1,0 +1,18 @@
+subdomains
+sitemap crawl
+robots.txt scan
+seclist subdomain
+cms detection
+subdirectory bruteforce based on cms
+whois domain
+dns records
+mx validity
+wayback, archive
+IP resolve
+geoINT
+blacklist/phishing
+shodan?
+
+the idea of a config file - how kernel works
+results save in txt files, store each report with an id, export to zip option
+RANDOME USERAGENT

@@ -1,0 +1,23 @@
+{
+"verbose":"No",
+"use banner":"No",
+"save report":"No",
+"save report index": "No",
+"operations": [
+	{
+		"subdomains":"Yes",
+		"sitemap crawl":"Yes",
+		"robots.txt scan":"Yes",
+		"seclist subdomain":"Yes",
+		"cms detection":"Yes",
+		"subdirectory bruteforce based on cms":"Yes",
+		"whois domain":"Yes",
+		"dns records":"Yes",
+		"mx validity":"Yes",
+		"wayback or archive":"Yes",
+		"IP resolve":"Yes",
+		"geoINT":"Yes",
+		"blacklist or phishing":"Yes"
+	}
+	]
+}
