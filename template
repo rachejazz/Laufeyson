@@ -16,3 +16,29 @@ shodan?
 the idea of a config file - how kernel works
 results save in txt files, store each report with an id, export to zip option
 RANDOME USERAGENT
+https://dnsbl.spfbl.net	
+https://sbl.spamhaus.org	
+https://zen.spamhaus.org	
+https://b.barracudacentral.org	
+https://bl.spamcop.net	
+https://cbl.abuseat.org	
+https://db.wpbl.info	
+https://dnsbl-1.uceprotect.net	
+https://dnsbl-2.uceprotect.net	
+https://dnsbl-3.uceprotect.net	
+https://dnsbl.dronebl.org	
+https://dnsbl.sorbs.net	
+https://dul.dnsbl.sorbs.net	
+https://dyna.spamrats.com	
+https://http.dnsbl.sorbs.net	
+https://ips.backscatterer.org	
+https://korea.services.net	
+https://misc.dnsbl.sorbs.net	
+https://pbl.spamhaus.org	
+https://psbl.surriel.com	
+https://smtp.dnsbl.sorbs.net	
+https://spam.dnsbl.sorbs.net	
+https://spam.spamrats.com	
+https://recent.spam.dnsbl.sorbs.net	
+https://ubl.unsubscore.com	
+https://xbl.spamhaus.org	 

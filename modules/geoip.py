@@ -4,7 +4,7 @@ meta = {
 		'name': 'GeoIP Locator',
 		'author': 'Divya Goswami',
 		'version': '0.0.1',
-		'description': 'geoIP module',
+		'description': 'extracts geolocation of the given IP or domain name',
 		'options': 'uhh...',
 		'example': 'geoip -q <IP>'
 }
