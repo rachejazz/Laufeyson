@@ -4,7 +4,7 @@ robots.txt scan
 seclist subdomain
 cms detection
 subdirectory bruteforce based on cms
-whois domain
+*whois domain
 *dns records
 mx validity
 wayback, archive

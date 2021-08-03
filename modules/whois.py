@@ -17,9 +17,14 @@ def options(self):
 
 def mod_run(self, util, q):
 	engine = getattr(u, util)
-	values = engine.run(self, q)
+	values = engine.run(self, q, 0)
 	if any(re.match(r'(\n|.)*unavailable', str(value)) for value in values):
-		self.error(f"Whois not found for {q}")
+		self.error("Not found in whois.")
+		values = engine.run(self, q, 1)
+		for i in values.strings:
+			j = re.sub(r'(<a[^>]*>)', '', str(i))
+			if not re.match(r'^\n\nAccess', j):
+				self.list_output(j)
 	else:
 		entries = values[0].find_all('div', 'col-md-8')
 		entries = values[0].find_all('div', 'col-md-8')
