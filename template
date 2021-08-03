@@ -4,6 +4,7 @@ robots.txt scan
 seclist subdomain
 cms detection
 subdirectory bruteforce based on cms
+from crt.sh and from js files
 *whois domain
 *dns records
 mx validity
