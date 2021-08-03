@@ -72,13 +72,13 @@ class Laufeyson(object):
 ####
 
 	def run_modules(self, name, q):
-#		try:
-		bool_val = self.search_modules(name)
-		if bool_val:
-			engine = getattr(m, name)
-			engine.mod_run(self, name, q)
-#		except:
-#			self.error(f"Something went wrong.\n(Not your fault? raise an issue!)")
+		try:
+			bool_val = self.search_modules(name)
+			if bool_val:
+				engine = getattr(m, name)
+				engine.mod_run(self, name, q)
+		except:
+			self.error(f"Something went wrong.\n(Not your fault? raise an issue!)")
 
 	def search_modules(self, name):
 		files = [f for f in os.listdir(self.mod_path)if not f.startswith('__')]

@@ -18,4 +18,5 @@ def mod_run(self, util, q):
 	engine = getattr(u, util)
 	value = engine.run(self, q)
 	for each in value:
-		self.output(f"{each}: {value[each]}")
+		self.output(each.title())
+		self.list_output(f"\t{value[each]}")

@@ -3,7 +3,7 @@ import json
 def run(self, q):
 	try:
 		self.info(f"geoip: Scanning {q}...")
-		url = f"http://ip-api.com/json/{q}?fields=status,continent,country,regionName,city,district,zip,lat,lon,timezone,currency,isp,org,as,asname,mobile,proxy,hosting,query"
+		url = f"http://ip-api.com/json/{q}?fields=status,continent,country,regionName,city,district,zip,lat,lon,timezone,currency,isp,org,as,mobile,proxy,hosting,query"
 		res = self.request('GET',url)
 		data = res.text
 		data_json = res.json()

@@ -5,11 +5,11 @@ seclist subdomain
 cms detection
 subdirectory bruteforce based on cms
 whois domain
-dns records
+*dns records
 mx validity
 wayback, archive
-IP resolve
-geoINT
+*IP resolve
+*geoINT
 blacklist/phishing
 shodan?
 

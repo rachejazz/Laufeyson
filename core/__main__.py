@@ -37,7 +37,7 @@ def lauf(args):
 			lauf.output(f"Searching for module {args.search}...")
 			lauf.search_modules(args.search)
 		else:
-			lauf.output(f"{f.Colors.N}To get started, use the -h option to see what modules are available")
+			lauf.output(f"{f.Colors.N}To get started, use the -h option to see what options are available")
 	
 WELCOME = f"[ {f.__version__}, {f.__author__} ]"
 parser = argparse.ArgumentParser(description=WELCOME)
