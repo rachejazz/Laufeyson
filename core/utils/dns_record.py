@@ -12,7 +12,8 @@ def run(self, q):
 	except:
 		self.error(f"dns_record: Something went wrong. Please try again.")
 	else:
-		if re.match(r'(\n|.)*No(\n|.)*DNS(\n|.)*', data):
+#		if re.match(r'(\n|.)*No(\n|.)*DNS(\n|.)*', data):
+		if re.match(r'(\n|.)*No[\n\s]+DNS(\n|.)*', data):
 			self.error(f"No DNS records found for {q}")
 		else:
 			send = BeautifulSoup(data, 'html.parser')

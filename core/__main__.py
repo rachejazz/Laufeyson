@@ -23,7 +23,7 @@ def lauf(args):
 			welcome()
 			lauf.output(f"Searching for {args.module}...")
 			if args.query:
-				lauf.run_modules(args.module, args.query)
+				lauf.run_modules(args.module, args.query, args.nobanner)
 			else:	
 				lauf.search_modules(args.module)		
 		elif args.show:

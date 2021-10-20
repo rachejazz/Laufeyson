@@ -38,6 +38,8 @@ class Laufeyson(object):
 					self.list_output(each.strip())
 
 	def request(self, method, url, **kwargs):
+		if '://' not in url:
+			url = f'https://{url}'
 		kwargs['timeout'] = kwargs.get('timeout')
 		headers = kwargs.get('headers') or {}
 		kwargs['verify'] = False
@@ -71,21 +73,22 @@ class Laufeyson(object):
 # ABOUT MODULES
 ####
 
-	def run_modules(self, name, q):
+	def run_modules(self, name, q, banner_bool):
 #		try:
-		bool_val = self.search_modules(name)
+		bool_val = self.search_modules(name, banner_bool)
 		if bool_val:
 			engine = getattr(m, name)
 			engine.mod_run(self, name, q)
 #		except:
 #			self.error(f"Something went wrong.\n(Not your fault? raise an issue!)")
 
-	def search_modules(self, name):
+	def search_modules(self, name, banner_bool=True):
 		files = [f for f in os.listdir(self.mod_path)if not f.startswith('__')]
 		if f"{name}.py" in files:
 			engine = getattr(m, name)
-			self.info(f"{name}: ")
-			engine.options(self)
+			if banner_bool:
+				self.info(f"{name}: ")
+				engine.options(self)
 			return True
 		else:
 			self.error(f"{name}: Module not found.")
