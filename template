@@ -1,18 +1,20 @@
-subdomains
-sitemap crawl
-robots.txt scan
-seclist subdomain
-cms detection
-subdirectory bruteforce based on cms
-from crt.sh and from js files
+*sitemap crawl
+*robots.txt scan
+*cms detection
 *whois domain
 *dns records
-mx validity
-wayback, archive
 *IP resolve
 *geoINT
+
+mx validity
 blacklist/phishing
-shodan?
+wayback, archive
+
+Plugins (Later To Do)
+shodan
+subdirectory bruteforce based on cms
+subdomains
+seclist subdomain
 
 the idea of a config file - how kernel works
 results save in txt files, store each report with an id, export to zip option

@@ -16,12 +16,7 @@ def options(self):
 
 def mod_run(self, util, q):
 	engine = getattr(u, util)
-#	value = engine.run(self, q)
-	engine.run(self, q)
-#	if value:
-#		self.output(f"Top Technologies Used in {q}:")
-#		for each in value:
-#			self.list_output(each)
-#	for each in value:
-#		self.output(each.title())
-#		self.list_output(f"\t{value[each]}")
+	value = engine.run(self, q)
+	self.output(f"Subdirectories found in {q}:")
+	for each in value:
+		self.list_output(each)

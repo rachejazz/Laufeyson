@@ -14,6 +14,7 @@ def sitemap_crawl(self, q, data = ""):
 		return False
 
 def raw(self, q):
+	buff = []
 	try:
 		res = self.request('GET', q)
 		data = res.text
@@ -25,13 +26,9 @@ def raw(self, q):
 		if dir_reg:
 			dir_reg = list(set(dir_reg))
 			for each in dir_reg:
-				print(f"Checking for {each}")
-				if "." in each:
-					print(each)
-					dir_reg.remove(each)
-				else:
-					print(f"Not in {each}")
-			return dir_reg
+				if each.find(".") == -1:
+					buff.append(each)
+			return buff
 		else:
 			return []
 
@@ -43,23 +40,19 @@ def robots(self, q):
 		self.error("No robots.txt found.")
 	else:
 		data = res.text
-#		dirs = re.findall(r'(?<!(:/))(/[\w\.-]+)/*', data)
 		dirs = re.findall(r'Disallow: (/[\w\-_]*)', data)
 		sitemap_crawl(self, q, data)
 		if dirs:
 			return list(set(dirs))
-		else:
-			return []
+	return []
 
 def cms(self, q):
 	tech_list = list(filter(lambda x: x not in ['A', 'The'], wh.run(self, q)))
-	return tech_list
-
-def cert(self, q):
-	pass
-
-def js(self, q):
-	pass
+	if tech_list:
+		self.output(f"CMS apears to be:")
+		for each in tech_list[:3]:
+			self.list_output(each)
+	return []
 
 def run(self, q):
 	subdirs = []
@@ -68,9 +61,7 @@ def run(self, q):
 	except:
 		self.error(f"subdirectory: Something went wrong. Please try again.")
 	else:
-#		utils = ['cms', 'robots', 'raw', 'cert', 'js']
-		utils = ['raw']
-#		subdirs.extend(list(set(robots(self, q))))
-#		print(subdirs)
+		utils = ['cms', 'raw', 'robots']
 		for each in utils:
-			self.list_output(globals()[each](self, q))
+			subdirs.extend(globals()[each](self, q))
+		return subdirs

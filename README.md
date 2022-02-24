@@ -29,3 +29,6 @@ Major roadmap
 scanning websites/links/urls - through ip profile
 snapshots to prevent self clicking - snapshots
 general area scan - Locationsearch
+
+Thank the vendors here:
+----------------------------------

@@ -1,4 +1,5 @@
-#!/bin/python
+#!/home/divya/assignment/devu/laufeyson/env/bin/python
+##!/bin/python
 
 from core import __main__
 import sys
