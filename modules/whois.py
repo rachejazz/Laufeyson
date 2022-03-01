@@ -6,7 +6,9 @@ meta = {
 		'author': 'Divya Goswami',
 		'version': '0.0.1',
 		'description': 'Issues a whois/rdap lookup on a domain',
-		'options': 'uhh...',
+		'options': [
+				('query', '-q')
+		],
 		'example': 'whois -q <domain>'
 }
 

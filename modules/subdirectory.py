@@ -5,7 +5,9 @@ meta = {
 		'author': 'Divya Goswami',
 		'version': '0.0.1',
 		'description': 'List subdirectories of the query domain given',
-		'options': 'uhh...',
+		'options': [
+				('query', '-q')
+		],
 		'example': 'subdirectory -q <domain>'
 }
 

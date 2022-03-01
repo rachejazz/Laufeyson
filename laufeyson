@@ -2,8 +2,9 @@
 ##!/bin/python
 
 from core import __main__
-import sys
+#import sys
 
 if __name__ == '__main__':
-	if not sys.argv[1:]:
-		__main__.welcome()
+#	if not sys.argv[1:]:
+#		__main__.welcome()
+	pass

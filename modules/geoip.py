@@ -5,7 +5,9 @@ meta = {
 		'author': 'Divya Goswami',
 		'version': '0.0.1',
 		'description': 'extracts geolocation of the given IP or domain name',
-		'options': 'uhh...',
+		'options': [
+				('query', '-q')
+		],
 		'example': 'geoip -q <IP>'
 }
 
