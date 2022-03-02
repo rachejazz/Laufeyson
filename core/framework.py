@@ -44,7 +44,11 @@ class Laufeyson(object):
 		parser = argparse.ArgumentParser(description=WELCOME)
 		parser.add_argument('-B', '--nobanner', help='run without banner', dest='nobanner', action='store_true')
 		parser.add_argument('-m', '--module',  help='run a module', dest='module', action='store')
-		mod_name = argv[2]
+		try:
+			mod_name = argv[2]
+		except:
+			self.error("Check input. No module specified.")
+			exit()
 		arg_ops = [x if x.startswith('-') else '' for x in argv]
 
 		with Checkfuncs():

@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import re
 
 def run(self, q):
+	q = q.split('_')[0]
 	send_record = ''
 	url = f'https://safeweb.norton.com/report/show?url={q}'
 	self.info('norton: Scanning domain...')

@@ -1,18 +1,11 @@
 from bs4 import BeautifulSoup
 import re
 
-def run(self, q):
+def run(self, query, key):
 	send_records = {}
-	
+
 	try:
-		query = q.split('_')[0]
-		api_key = q.split('_')[1]
-	except:
-		self.error(f"check-mail: Cannot proceed scanning, did you provide an API key?")
-		return send_records
-	
-	try:
-		self.info(f"check-mail: Scanning {q}...")
+		self.info(f"check-mail: Scanning {query}...")
 		url = f"https://mailcheck.p.rapidapi.com/"
 		q = {
 			"disable_test_connection":"true",
@@ -20,14 +13,17 @@ def run(self, q):
 		}
 		headers = {
 			'x-rapidapi-host': "mailcheck.p.rapidapi.com",
-			'x-rapidapi-key': f"{api_key}"
+			'x-rapidapi-key': f"{key}"
 		}
 		res = self.request(
 				'GET',url,
 				headers=headers,
 				params=q
 		)
-		send_records = res.json
+		send_records = res.text
+		if 'API' in send_records:
+			raise
 	except:
-		self.error(f"check-mail: Something went wrong. Please try again.")
+		self.error(f"check-mail: {send_records}")
+		return {}
 	return send_records

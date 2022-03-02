@@ -6,7 +6,6 @@ def run(self, q, c):
 		self.info(f"whois: Looking up {q} in {(lambda:'whois', lambda:'multirbl')[c]()}...")
 		res = self.request('GET',urls[c])
 		data = res.text
-		print(data)
 	except:
 		self.error(f"whois: Something went wrong. Please try again.")
 	else:

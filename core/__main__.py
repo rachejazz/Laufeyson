@@ -25,7 +25,7 @@ def lauf(args):
 			value = lauf.init_load_options(args)
 			lauf.welcome(value['nobanner'])
 			if 'query' in value:
-				lauf.run_modules(value['module'], value['query'], value['nobanner'])
+				lauf.run_modules(value['module'], value, value['nobanner'])
 			else:	
 				lauf.search_modules(value['module'])
 		elif option == '-S' or option == '--show':
