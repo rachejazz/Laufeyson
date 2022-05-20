@@ -2,8 +2,8 @@ from bs4 import BeautifulSoup
 
 def run(self, q, c): 
 	try:
-		urls = [f"https://who.is/whois/{q}", f"https://multirbl.valli.org/whois-lookup/{q}.html"]
-		self.info(f"whois: Looking up {q} in {(lambda:'whois', lambda:'multirbl')[c]()}...")
+		urls = [f"https://who.is/whois/{q['query']}", f"https://multirbl.valli.org/whois-lookup/{q}.html"]
+		self.info(f"whois: Looking up {q['query']} in {(lambda:'whois', lambda:'multirbl')[c]()}...")
 		res = self.request('GET',urls[c])
 		data = res.text
 	except:
@@ -14,4 +14,5 @@ def run(self, q, c):
 			data = send.find_all('div', 'queryResponseBody')
 		else:
 			data = send.find('div', 'whoisOutput')
+#	print(data)
 	return data

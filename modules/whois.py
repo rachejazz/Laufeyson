@@ -20,6 +20,7 @@ def options(self):
 def mod_run(self, util, q):
 	engine = getattr(u, util)
 	values = engine.run(self, q, 0)
+#	print(values)
 	if any(re.match(r'(\n|.)*unavailable', str(value)) for value in values):
 		self.error("Not found in whois.")
 		values = engine.run(self, q, 1)
@@ -29,7 +30,7 @@ def mod_run(self, util, q):
 				self.list_output(j)
 	else:
 		entries = values[0].find_all('div', 'col-md-8')
-		entries = values[0].find_all('div', 'col-md-8')
+#		entries = values[0].find_all('div', 'col-md-8')
 		if all(each.string == None or each.string == '\n' for each in entries):
 			for i in values[4].div.div.pre.strings:
 				self.list_output(str(i))
