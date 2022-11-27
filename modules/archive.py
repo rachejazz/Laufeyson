@@ -1,14 +1,16 @@
 import core as u
 
 meta = {
-		'name': 'GeoIP Locator',
+		'name': 'Web Archive Finder',
 		'author': 'Divya Goswami',
 		'version': '0.0.1',
-		'description': 'extracts geolocation of the given IP or domain name',
+		'description': 'extracts old snapshots from webarchive of the given url or domain name',
 		'options': [
-				('query', '-q')
+				('query', '-q'),
+				('from', '-f'),
+				('to', '-t')
 		],
-		'example': 'geoip -q <IP>'
+		'example': 'archive -q <url> -f 2019 -t 2022'
 }
 
 def options(self):
@@ -17,6 +19,7 @@ def options(self):
 
 
 def mod_run(self, util, q):
+	print(q)
 	engine = getattr(u, util)
 	value = engine.run(self, q)
 	self.output(f"Snapshots of {q['query']} till date:")

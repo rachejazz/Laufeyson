@@ -1,4 +1,5 @@
 import os
+import json
 import sys
 import requests
 import argparse
@@ -95,6 +96,7 @@ class Laufeyson(object):
 ####
 # PRETTY PRINTS
 ####
+
 	def welcome(self, nobanner=False):
 		self.print_message(f"{Colors.G}{BANNER}", nobanner)
 		self.print_message(f"{Colors.Y}{WELCOME}", nobanner)
@@ -165,4 +167,14 @@ class Laufeyson(object):
 ####
 	
 	def read_config(self):
-		self.info("Will be added soon!")
+		self.info("Reading from config...")
+		with open("core/config.json") as c:
+			conf = c.read()
+		conf = json.loads(conf)
+		operations=conf['operations'][0]
+#		print(conf['operations'][0]['subdomains'].value())
+		for each in operations:
+			if operations[each] == "yes":
+				self.output(f"{each} enabled.")
+			elif operations[each] == "no":
+				self.error(f"{each} disabled.")

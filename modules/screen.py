@@ -8,7 +8,7 @@ meta = {
 		'options': [
 				('query', '-q')
 		],
-		'example': 'screen -q <IP>'
+		'example': 'screen -q <domain/url>'
 }
 
 def options(self):
