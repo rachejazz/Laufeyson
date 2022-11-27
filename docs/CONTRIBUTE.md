@@ -5,7 +5,7 @@ Its a simple python application (unless we have web ui later)
 python -m venv env
 #(activate env through source. This step is specific for bash, zsh, fish, etc)
 pip install -r requirements
-	```
+```
 
 # Ways to contribute
 
