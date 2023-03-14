@@ -29,4 +29,4 @@ Thanking all the vendors here:
 6. w3techs.com
 7. who.is
 
-If you wish to contribute, checkout ![CONTRIBUTE.md](https://github.com/rachejazz/Laufeyson/blob/main/docs/CONTRIBUTE.md)
+If you wish to contribute, checkout [CONTRIBUTE.md](https://github.com/rachejazz/Laufeyson/blob/main/docs/CONTRIBUTE.md)
